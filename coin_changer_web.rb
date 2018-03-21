@@ -9,7 +9,10 @@ get "/" do
 end
 
 get "/input" do
+	if params[:name].nil?
+	else
 	session[:name] = params[:name]
+	end 
 	erb :input
 end
 

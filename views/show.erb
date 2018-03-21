@@ -5,10 +5,17 @@
 </head>
 <body>
 
-	<h2>Here are your coins</h2>
+	<h1>Here are your coins, <%= session[:name] %></h1>
 
 
-	<h1><%=session[:coins]%></h1>
+	<%session[:coins].each_pair do |key, value|%>
+	<h2><%= key %>: <%= value %></h2>
+	<% end %>
+
+
+	<form action="/input" method="get">
+		<input type="submit" value ="Do it Again!">
+	</form>
 
 
 
